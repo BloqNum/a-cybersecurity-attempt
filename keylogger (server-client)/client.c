@@ -25,7 +25,7 @@ int main(){
     addr_p.sin_family = AF_INET;
     addr_p.sin_port = htons(3128); //squid port
 
-    if(inet_pton(AF_INET, "squid ip", &addr_p.sin_addr) < 0)
+    if(inet_pton(AF_INET, "proxy ip", &addr_p.sin_addr) < 0)
         perror("inet_pton error");
 
     if(connect(sockfd_p, (struct sockaddr *)&addr_p, sizeof(addr_p)) < 0)
